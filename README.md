@@ -1,4 +1,4 @@
-# transltor 
+# translator 
 
 Automatically selects the best translation API and falls back to native translators on failure.
 
