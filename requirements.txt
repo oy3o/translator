@@ -1,0 +1,3 @@
+translators
+argostranslate
+oy3opy @ git+https://github.com/oy3o/oy3opy
