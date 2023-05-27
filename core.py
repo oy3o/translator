@@ -39,15 +39,11 @@ def translate(text:str, src:str='en', dest:str='en', endpoints = 'auto', proxies
 
 
 def get_case(code:str, proxies = {}):
-    if code not in cases:
-        cases[code] = translate(cases['en'], code, 'en', check_availability('en', code, proxies), proxies)
-    return cases[code]
+    return cases.setdefault(code, translate(cases['en'], code, 'en', check_availability('en', code, proxies), proxies))
 
 def test_endpoint(src:str, dest:str, endpoint:str, text = None, proxies={}):
     type = f'{src}->{dest}'
-    if not invalid_endpoints.get(type):
-        invalid_endpoints[type] = []
-    if endpoint in invalid_endpoints[type]:
+    if endpoint in invalid_endpoints.setdefault(type, []):
         return None
     try:
         text = text if text else get_case(src, proxies)
