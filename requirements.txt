@@ -1,3 +1,4 @@
 translators
 argostranslate
 oy3opy @ git+https://github.com/oy3o/oy3opy
+stanza>=1.4.1 # not directly required, pinned by Snyk to avoid a vulnerability
